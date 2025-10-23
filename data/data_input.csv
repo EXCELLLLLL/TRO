@@ -1,0 +1,15 @@
+﻿Warehouse,Location,Capacity
+G1,Bekasi,150
+G2,Tangerang,200
+G3,Depok,180
+
+Store,Location,Demand
+T1,Jakarta Pusat,120
+T2,Jakarta Utara,140
+T3,Jakarta Selatan,110
+T4,Jakarta Timur,130
+
+From,To_T1,To_T2,To_T3,To_T4
+G1,8,6,10,9
+G2,9,12,13,7
+G3,14,9,16,5

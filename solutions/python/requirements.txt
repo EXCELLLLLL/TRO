@@ -1,0 +1,30 @@
+# Requirements for FreshDrink Distribution Optimization Project
+# Teknik Riset Operasi - UTS & UAS
+
+# Core optimization library
+pulp>=2.7.0
+
+# Numerical computing
+numpy>=1.24.0
+
+# Data manipulation and analysis (optional, for UAS)
+pandas>=2.0.0
+
+# Visualization (optional, for UAS)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Alternative optimization libraries (optional)
+scipy>=1.10.0
+
+# Excel file handling (optional, for reading/writing Excel)
+openpyxl>=3.1.0
+
+# For JSON handling (built-in, no need to install)
+# json
+
+# Installation instructions:
+# pip install -r requirements.txt
+#
+# Or install individually:
+# pip install pulp numpy pandas matplotlib seaborn scipy openpyxl
