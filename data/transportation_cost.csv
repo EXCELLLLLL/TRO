@@ -1,0 +1,21 @@
+From,To,Cost_Per_Unit_Rp_Thousands,Distance_KM,Route_Condition
+Jakarta,RS Jakarta Pusat,5,25,Excellent
+Jakarta,RS Tangerang,15,75,Good
+Jakarta,RS Bekasi,12,60,Good
+Jakarta,Apotek Depok,8,40,Good
+Jakarta,RS Bogor,18,90,Fair
+Tangerang,RS Jakarta Pusat,18,90,Fair
+Tangerang,RS Tangerang,4,20,Excellent
+Tangerang,RS Bekasi,20,100,Fair
+Tangerang,Apotek Depok,16,80,Good
+Tangerang,RS Bogor,25,125,Poor
+Bekasi,RS Jakarta Pusat,14,70,Good
+Bekasi,RS Tangerang,22,110,Fair
+Bekasi,RS Bekasi,6,30,Excellent
+Bekasi,Apotek Depok,10,50,Good
+Bekasi,RS Bogor,20,100,Fair
+Bogor,RS Jakarta Pusat,16,80,Good
+Bogor,RS Tangerang,24,120,Poor
+Bogor,RS Bekasi,18,90,Fair
+Bogor,Apotek Depok,7,35,Good
+Bogor,RS Bogor,5,25,Excellent

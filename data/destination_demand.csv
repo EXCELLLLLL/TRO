@@ -1,0 +1,6 @@
+Destination_ID,Destination_Name,Facility_Type,Monthly_Demand_Units,Priority_Level
+DEST_001,RS Jakarta Pusat,Hospital,250,Medium
+DEST_002,RS Tangerang,Hospital,300,High
+DEST_003,RS Bekasi,Hospital,200,Medium
+DEST_004,Apotek Depok,Pharmacy,280,High
+DEST_005,RS Bogor,Hospital,220,Medium

@@ -1,196 +1,156 @@
 # Project Analisis dan Optimasi Sistem Distribusi
-## Teknik Riset Operasi - UTS & UAS
+## Studi Kasus: Optimasi Distribusi Produk Farmasi PT. MediCare Indonesia
 
-###  Deskripsi Project
-Project ini menganalisis dan mengoptimalkan sistem distribusi produk dari gudang ke toko retail menggunakan metode Transportation Problem dan Linear Programming. Studi kasus yang digunakan adalah perusahaan distribusi minuman "FreshDrink Distribution Co."
+### 📋 Deskripsi Project
+Project ini menganalisis dan mengoptimalkan sistem distribusi produk farmasi dari beberapa pusat distribusi (gudang) ke berbagai rumah sakit dan apotek di Indonesia. Tujuan utama adalah meminimalkan biaya transportasi sambil memenuhi permintaan semua lokasi tujuan.
 
----
+### 🎯 Objektif
+- Meminimalkan total biaya distribusi
+- Memenuhi semua permintaan pelanggan
+- Tidak melebihi kapasitas gudang
+- Membandingkan solusi dari berbagai metode/software
+- Melakukan analisis sensitivitas terhadap perubahan parameter
 
-##  Studi Kasus: FreshDrink Distribution Co.
+### 📊 Studi Kasus
+**Konteks Bisnis:**
+PT. MediCare Indonesia adalah distributor produk farmasi yang melayani rumah sakit dan apotek di wilayah Jabodetabek dan Jawa Barat. Perusahaan memiliki 4 pusat distribusi dan harus melayani 5 lokasi tujuan dengan biaya transportasi yang bervariasi berdasarkan jarak dan kondisi jalan.
 
-### Konteks Bisnis
-FreshDrink Distribution Co. adalah perusahaan distributor minuman ringan yang melayani berbagai toko retail di Jabodetabek. Perusahaan memiliki beberapa gudang distribusi dan harus mengirimkan produk ke berbagai toko dengan biaya transportasi yang berbeda-beda.
+**Data Kasus:**
+- 4 Gudang (Warehouse): Jakarta, Tangerang, Bekasi, Bogor
+- 5 Tujuan (Destination): RS Jakarta Pusat, RS Tangerang, RS Bekasi, Apotek Depok, RS Bogor
+- Kapasitas gudang berbeda-beda
+- Permintaan setiap tujuan berbeda-beda
+- Biaya transportasi per unit berbeda untuk setiap rute
 
-### Permasalahan
-- Perusahaan memiliki 3 gudang dengan kapasitas berbeda
-- Harus melayani 4 toko retail dengan permintaan spesifik
-- Biaya transportasi dari setiap gudang ke setiap toko berbeda
-- **Tujuan**: Meminimalkan total biaya transportasi
-
----
-
-##  Data Project
-
-### Kapasitas Gudang (Supply)
-| Gudang | Lokasi | Kapasitas (unit) |
-|--------|--------|------------------|
-| G1 | Bekasi | 150 |
-| G2 | Tangerang | 200 |
-| G3 | Depok | 180 |
-| **Total** | | **530** |
-
-### Permintaan Toko (Demand)
-| Toko | Lokasi | Permintaan (unit) |
-|------|--------|-------------------|
-| T1 | Jakarta Pusat | 120 |
-| T2 | Jakarta Utara | 140 |
-| T3 | Jakarta Selatan | 110 |
-| T4 | Jakarta Timur | 130 |
-| **Total** | | **500** |
-
-### Biaya Transportasi (Rp per unit)
-| Dari/Ke | T1 | T2 | T3 | T4 |
-|---------|----|----|----|----|
-| **G1** | 8 | 6 | 10 | 9 |
-| **G2** | 9 | 12 | 13 | 7 |
-| **G3** | 14 | 9 | 16 | 5 |
-
----
-
-##  Struktur Project
+### 📁 Struktur Folder
 
 ```
-TRO-Project/
-├── README.md                          # File ini
+TRO_Project/
+│
+├── README.md
+├── requirements.txt
+│
 ├── data/
-│   ├── data_input.xlsx               # Data input (Excel)
-│   └── data_input.csv                # Data input (CSV)
-├── models/
-│   ├── model_formulation.md          # Dokumentasi model matematika
-│   └── manual_solution.md            # Solusi manual step-by-step
-├── solutions/
-│   ├── excel_solver/
-│   │   ├── solution.xlsx             # Solusi menggunakan Excel Solver
-│   │   └── excel_steps.md            # Panduan penggunaan Excel Solver
-│   └── python/
-│       ├── optimization.py           # Code Python (PuLP/SciPy)
-│       ├── requirements.txt          # Dependencies Python
-│       └── results.json              # Output hasil optimasi
-├── analysis/
-│   ├── sensitivity_analysis.md       # Analisis sensitivitas (UAS)
-│   └── scenario_exploration.md       # Eksplorasi skenario (UAS)
-├── reports/
-│   ├── UTS_Report.pdf                # Laporan UTS (Point 1-3)
-│   └── UAS_Report.pdf                # Laporan UAS (Point 4-5)
-└── visualizations/
-    ├── cost_matrix.png               # Visualisasi matriks biaya
-    ├── solution_flow.png             # Diagram alur distribusi
-    └── comparison_chart.png          # Perbandingan hasil solver
+│   ├── input_data.xlsx
+│   ├── warehouse_capacity.csv
+│   ├── destination_demand.csv
+│   └── transportation_cost.csv
+│
+├── src/
+│   ├── __init__.py
+│   ├── model_formulation.py
+│   ├── excel_solver.py
+│   ├── python_solver.py
+│   └── visualization.py
+│
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_manual_solution.ipynb
+│   ├── 03_excel_solver_solution.ipynb
+│   ├── 04_python_optimization.ipynb
+│   └── 05_sensitivity_analysis.ipynb
+│
+├── results/
+│   ├── UTS/
+│   │   ├── manual_solution.xlsx
+│   │   ├── excel_solver_solution.xlsx
+│   │   ├── python_solution.csv
+│   │   └── comparison_table.xlsx
+│   │
+│   └── UAS/
+│       ├── sensitivity_analysis.xlsx
+│       ├── scenario_comparison.xlsx
+│       └── visualizations/
+│
+├── docs/
+│   ├── UTS_Report.pdf
+│   ├── UAS_Report.pdf
+│   ├── model_formulation.md
+│   └── methodology.md
+│
+└── presentation/
+    ├── UTS_Presentation.pptx
+    └── UAS_Presentation.pptx
 ```
 
----
+### 🔧 Teknologi yang Digunakan
+- **Python 3.8+**
+    - PuLP (Linear Programming)
+    - SciPy (Optimization)
+    - Pandas (Data manipulation)
+    - Matplotlib & Seaborn (Visualisasi)
+    - NumPy (Numerical computation)
+- **Microsoft Excel** dengan Solver Add-in
+- **Jupyter Notebook** untuk analisis interaktif
 
-##  Model Matematika
+### 📦 Instalasi
 
-### Fungsi Tujuan
-Minimasi total biaya transportasi:
-
-```
-Minimize Z = Σ Σ (cij × xij)
-           i=1 j=1
-```
-
-Di mana:
-- `Z` = Total biaya transportasi
-- `cij` = Biaya transportasi dari gudang i ke toko j
-- `xij` = Jumlah unit yang dikirim dari gudang i ke toko j
-- `i` = 1, 2, 3 (gudang)
-- `j` = 1, 2, 3, 4 (toko)
-
-### Kendala (Constraints)
-
-**1. Kendala Kapasitas Gudang (Supply Constraints):**
-```
-Σ xij ≤ Si  untuk setiap i
-j=1
-```
-- x1j ≤ 150 (Gudang 1)
-- x2j ≤ 200 (Gudang 2)
-- x3j ≤ 180 (Gudang 3)
-
-**2. Kendala Permintaan Toko (Demand Constraints):**
-```
-Σ xij = Dj  untuk setiap j
-i=1
-```
-- xi1 = 120 (Toko 1)
-- xi2 = 140 (Toko 2)
-- xi3 = 110 (Toko 3)
-- xi4 = 130 (Toko 4)
-
-**3. Kendala Non-Negatif:**
-```
-xij ≥ 0  untuk semua i, j
-```
-
----
-
-##  Cara Menjalankan
-
-### Metode 1: Excel Solver
-1. Buka file `solutions/excel_solver/solution.xlsx`
-2. Pastikan Excel Solver Add-in sudah aktif
-3. Ikuti panduan di `excel_steps.md`
-4. Klik "Solve" untuk mendapatkan solusi optimal
-
-### Metode 2: Python
 ```bash
-# Install dependencies
-pip install -r solutions/python/requirements.txt
+# Clone repository
+git clone https://github.com/username/TRO_Project.git
+cd TRO_Project
 
-# Jalankan optimasi
-python solutions/python/optimization.py
+# Install dependencies
+pip install -r requirements.txt
+
+# Untuk Excel Solver, aktifkan Add-in Solver di Excel
 ```
 
-### Metode 3: Manual
-Lihat dokumentasi lengkap di `models/manual_solution.md` untuk solusi step-by-step menggunakan metode:
-- Metode Northwest Corner
-- Metode Least Cost
-- Metode Vogel's Approximation (VAM)
-- MODI Method untuk optimalisasi
+### 🚀 Cara Menjalankan
+
+#### 1. Tugas UTS (Point 1-3)
+```bash
+# Jalankan analisis manual
+python src/manual_solution.py
+
+# Jalankan solver Python
+python src/python_solver.py
+
+# Untuk Excel Solver, buka file:
+# data/input_data.xlsx dan jalankan Solver
+```
+
+#### 2. Tugas UAS (Point 4-5)
+```bash
+# Jalankan analisis sensitivitas
+python src/sensitivity_analysis.py
+
+# Generate laporan lengkap
+python src/generate_report.py
+```
+
+### 📈 Hasil yang Diharapkan
+
+**UTS:**
+1. Model matematika yang terformulasi dengan jelas
+2. Solusi optimal dari metode manual
+3. Solusi dari Excel Solver
+4. Solusi dari Python (PuLP/SciPy)
+5. Tabel perbandingan hasil
+
+**UAS:**
+4. Analisis sensitivitas terhadap:
+    - Perubahan kapasitas gudang
+    - Perubahan biaya transportasi
+    - Penambahan gudang/tujuan baru
+    - Perubahan permintaan
+5. Laporan lengkap dengan:
+    - Executive summary
+    - Visualisasi hasil
+    - Rekomendasi strategis
+    - Analisis cost-benefit
+
+### 👥 Tim Project
+- Nama Mahasiswa: Muhammad Arjun Robben
+- NIM: 231011400740
+- Kelas: 05TLPM009
+- Mata Kuliah: Teknik Riset Operasional (TRO)
+
+### 📝 Lisensi
+Project ini dibuat untuk keperluan akademik.
+
+### 📧 Kontak
+Untuk pertanyaan lebih lanjut, hubungi: muhammadarjunrobben@gmail.com
 
 ---
-
-##  Deliverables
-
-### Tugas UTS (Point 1-3)
-- ✅ Studi kasus dan data
-- ✅ Model matematika lengkap
-- ✅ Solusi manual step-by-step
-- ✅ Solusi menggunakan Excel Solver
-- ✅ Solusi menggunakan Python
-- ✅ Perbandingan hasil kedua metode
-- ✅ Interpretasi hasil
-
-### Tugas UAS (Point 4-5)
-- ⏳ Analisis sensitivitas
-- ⏳ Eksplorasi skenario (variasi data)
-- ⏳ Visualisasi hasil
-- ⏳ Rekomendasi konsultan
-- ⏳ Laporan lengkap
-
----
-
-##  Tim Project
-- **Nama Mahasiswa**: Muhammad Arjun Robben
-- **NIM**: 231011400740
-- **Kelas**: 05TPLM009
-- **Mata Kuliah**: Teknik Riset Operasional
-
----
-
-##  Referensi
-1. Hillier, F. S., & Lieberman, G. J. (2020). Introduction to Operations Research
-2. Taha, H. A. (2017). Operations Research: An Introduction
-3. Winston, W. L. (2022). Operations Research: Applications and Algorithms
-
----
-
-##  Kontak
-Untuk pertanyaan atau diskusi project, silakan hubungi:
-- Email: muhammadarjunrobben@gmail.com
-- GitHub: EXCELLLLLL
-
----
-
-**Last Updated**: Oktober 2025
+**Last Updated:** Januari 2026

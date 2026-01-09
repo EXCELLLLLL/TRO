@@ -1,0 +1,5 @@
+Warehouse_ID,Warehouse_Name,Location,Capacity_Units,Status
+WH_JAK,Jakarta,Jakarta Utara,350,Active
+WH_TAN,Tangerang,Tangerang Kota,400,Active
+WH_BEK,Bekasi,Bekasi Timur,300,Active
+WH_BOG,Bogor,Bogor Tengah,250,Active
